@@ -3,7 +3,7 @@ import type { Menu } from "../Models/Responses/Menu";
 import { config } from "../config"; 
 
 // Construimos la URL dinámicamente usando el archivo JSON
-const API_URL = `${config.api.url}/menu`;
+const API_URL = `${config.api.url}/Menu`;
 
 export async function getMenus(): Promise<Menu[]> {
     try {
