@@ -1,9 +1,9 @@
 export default function Footer() {
   const direccion = "Soda La Cabaña, Costa Rica";
   const mapsUrl = `https://maps.app.goo.gl/GoZmnkGj2rCgpSKg9`;
-  const instagramUrl = "https://www.instagram.com/insta de la soda/";
+  const instagramUrl = "https://www.instagram.com/sodalacabana/";
   const whatsappUrl = "https://wa.me/50688888888";
-  const facebookUrl = "https://www.facebook.com/face de la soda";
+  const facebookUrl = "https://www.facebook.com/sodalacabana";
 
   return (
     <footer className="bg-stone-900 text-stone-300">
