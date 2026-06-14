@@ -20,7 +20,7 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen flex flex-col w-full">
         <Header />
-        <main className="bg-gray-800 flex-1">
+        <main className="bg-white flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Area" element={<AreaList />} />
