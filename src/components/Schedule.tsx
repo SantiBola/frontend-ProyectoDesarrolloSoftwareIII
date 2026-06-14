@@ -1,4 +1,3 @@
-    import React from "react";
 
 export default function BloqueHorario() {
   // Datos estructurados para mantener el componente limpio y escalable
