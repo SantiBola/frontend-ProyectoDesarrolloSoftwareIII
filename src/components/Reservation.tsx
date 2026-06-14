@@ -57,14 +57,6 @@ export function Reservation() {
       id="reservaciones"
       className="relative py-14 px-6 bg-[#fdf6ee] overflow-hidden"
     >
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, #4a2b1b 0px, #4a2b1b 1px, transparent 1px, transparent 14px)",
-        }}
-      />
-
       <div className="relative max-w-xl mx-auto">
         <div className="text-center mb-8">
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-[#c55a28] mb-3">
