@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Footer from "./shared/Footer";
 import NotFound from "./shared/NotFound";
 import Home from "./features/home/Home";
@@ -12,7 +11,7 @@ import { MenuList } from "./components/MenuList";
 import { OrderDetailList } from "./components/OrderDetailList";
 import { OrderList } from "./components/OrderList";
 import { PayList } from "./components/PayList";
-import { ReservationList } from "./components/ReservationList";
+import { Reservation } from "./components/Reservation";
 import { RestaurantList } from "./components/RestaurantList";
 import { RestaurantTableList } from "./components/RestaurantTableList";
 import { StateList } from "./components/StateList";
@@ -32,7 +31,7 @@ export default function App() {
             <Route path="/OrderDetail" element={<OrderDetailList />} />
             <Route path="/Order" element={<OrderList />} />
             <Route path="/Pay" element={<PayList />} />
-            <Route path="/Reservation" element={<ReservationList />} />
+            <Route path="/Reservation" element={<Reservation />} />
             <Route path="/Restaurant" element={<RestaurantList />} />
             <Route path="/Table" element={<RestaurantTableList />} />
             <Route path="/State" element={<StateList />} />
