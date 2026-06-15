@@ -13,7 +13,7 @@ const featuredDishes = [
   {
     name: "Desayuno cabana",
     description: "Gallo pinto, huevos, natilla, queso y tortilla caliente.",
-    price: "desde ₡2.800",
+    price: "desde ₡3.800",
   },
   {
     name: "Olla de carne",
