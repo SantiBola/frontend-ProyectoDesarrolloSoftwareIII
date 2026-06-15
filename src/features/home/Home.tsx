@@ -44,7 +44,7 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto min-h-[640px] px-6 py-16 md:py-24 flex items-center">
           <div className="max-w-2xl text-white">
             <p className="text-sm font-bold tracking-[0.24em] uppercase text-[#ffd9bf] mb-5">
-              Soda La Cabana
+              ¡Bienvenido a Soda La Cabana!
             </p>
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
