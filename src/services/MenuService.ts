@@ -35,5 +35,7 @@ export async function deleteMenu(idMenu: number): Promise<void> {
     method: "DELETE",
   });
 
-  return handleJsonResponse<void>(response, "Error al eliminar el plato");
+  if (!response.ok) {
+    throw new Error("Error al eliminar el plato");
+  }
 }
