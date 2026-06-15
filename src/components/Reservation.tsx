@@ -200,7 +200,7 @@ export function Reservation() {
                   <div>
                     <p className="font-bold text-[#3f2417]">¡Reserva confirmada!</p>
                     <p className="text-sm text-[#6b4a37] mt-0.5">
-                      Te esperamos. Si necesitás cambiar algo, escribinos por
+                      Te esperamos. Si necesitas cambiar algo, escribinos por
                       WhatsApp con tu número de cliente y mesa.
                     </p>
                   </div>
