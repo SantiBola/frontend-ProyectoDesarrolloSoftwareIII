@@ -20,7 +20,7 @@ const formatPrice = (price: number) =>
     maximumFractionDigits: 0,
   }).format(price);
 
-const withTimeout = <T,>(promise: Promise<T>, timeoutMs = 2500): Promise<T> =>
+const withTimeout = <T,>(promise: Promise<T>, timeoutMs = 30000): Promise<T> =>
   Promise.race([
     promise,
     new Promise<T>((_, reject) => {
