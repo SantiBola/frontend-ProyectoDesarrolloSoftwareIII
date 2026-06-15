@@ -31,12 +31,14 @@ export default function Header() {
 
     if (href === "#home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.pushState(null, '', '/'); // Limpia el hash de la URL al volver arriba
       return;
     }
 
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, '', href); // Actualiza la barra de navegación para Cypress
     }
   };
 
@@ -45,12 +47,14 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     navigate("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
+    window.history.pushState(null, '', '/');
   };
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full bg-[#FDF8F4] border-b border-[#EAE4DF] shadow-md">
       <div className="px-4 md:px-6 py-3 flex items-center justify-between">
         
+        {/* LOGO Y NOMBRE */}
         <div 
           onClick={handleLogoClick}
           className="flex items-center gap-2 md:gap-3 cursor-pointer group"
@@ -73,6 +77,7 @@ export default function Header() {
           </div>
         </div>
 
+        {/* NAVEGACIÓN DESKTOP */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {menuItems.map((item) => (
             <button
@@ -86,6 +91,7 @@ export default function Header() {
           ))}
         </nav>
 
+        {/* BOTONES ADICIONALES Y MENÚ MÓVIL */}
         <div className="flex items-center gap-3 md:gap-6">
           <button
             aria-label="Toggle theme"
@@ -128,23 +134,16 @@ export default function Header() {
               className="w-6 h-6"
             >
               {isMobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               )}
             </svg>
           </button>
         </div>
       </div>
 
+      {/* MENÚ MÓVIL DESPLEGABLE */}
       {isMobileMenuOpen && (
         <div className="md:hidden border-t border-[#EAE4DF] bg-[#FDF8F4] animate-in slide-in-from-top-2 duration-300">
           <nav className="flex flex-col py-4 px-4 space-y-3">

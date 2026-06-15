@@ -1,11 +1,6 @@
 'use client';
 
 export default function CateringPage() {
-  
-  const handleWhatsAppClick = () => {
-    window.open("https://wa.me/85049791", "_blank");
-  };
-
   return (
     <>
       <style>
@@ -14,7 +9,7 @@ export default function CateringPage() {
 
       <div id="catering" className="w-full bg-[#fdf6ee] text-[#542d1b] font-['Manrope'] min-h-screen pt-1 pb-4 px-4 md:px-7">
         
-        {/* ENCABEZADO PRINCIPAL - CENTRADO Y CON PLAYFAIR DISPLAY */}
+        {/* ENCABEZADO PRINCIPAL */}
         <div className="max-w-4xl mx-auto text-center mb-10">
           <h1 
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3f2417] tracking-tight mb-3"
@@ -22,18 +17,12 @@ export default function CateringPage() {
           >
             Servicio de Catering
           </h1>
-          {/* <p 
-            className="text-base sm:text-lg text-[#3f2417] font-semibold tracking-wide"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          >
-            Una página especial para eventos y celebraciones
-          </p> */}
         </div>
 
-        {/* CONTENEDOR CENTRAL: FOTO + DETALLES COMERCIALES */}
+        {/* CONTENEDOR CENTRAL: FOTO + DETALLES */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white p-6 sm:p-8 rounded-[2rem] border border-[#EAE4DF] shadow-md mb-12">
           
-          {/* Espacio para la foto base */}
+          {/* Espacio para la foto */}
           <div className="w-full h-64 sm:h-80 md:h-[380px] bg-[#EAE4DF]/40 rounded-2xl overflow-hidden shadow-inner flex items-center justify-center relative group border border-[#EAE4DF]">
             <img 
               src="/catering.jpg" 
@@ -44,7 +33,7 @@ export default function CateringPage() {
             </div>
           </div>
 
-          {/* Bloques de Información Requeridos */}
+          {/* Bloques de Información */}
           <div className="flex flex-col justify-center space-y-6 text-left">
             
             {/* Bloque 1: Servicio Completo */}
@@ -73,15 +62,16 @@ export default function CateringPage() {
 
             {/* Bloque 3: Contacto Rápido y Acciones */}
             <div className="pt-4 border-t border-[#EAE4DF] space-y-4">
-              
-              {/* Botón de Acción Principal */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <button 
-                  onClick={handleWhatsAppClick}
+                {/* Enlace ancla directo con atributo href nativo para las pruebas de Cypress */}
+                <a 
+                  href="https://wa.me/50685049791" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto px-6 py-3 bg-[#c05428] text-white font-bold rounded-full text-sm tracking-wide shadow-md hover:bg-[#a8441f] transition-all active:scale-95 text-center flex items-center justify-center gap-2"
                 >
                   <span>Cotizar por WhatsApp</span>
-                </button>
+                </a>
               </div>
             </div>
 
