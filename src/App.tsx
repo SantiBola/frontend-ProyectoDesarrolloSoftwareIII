@@ -15,31 +15,34 @@ import { Reservation } from "./components/Reservation";
 import { RestaurantList } from "./components/RestaurantList";
 import { RestaurantTableList } from "./components/RestaurantTableList";
 import { StateList } from "./components/StateList";
+import { ToastProvider } from "./shared/ToastProvider";
 export default function App() {
     return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col w-full">
-        <Header />
-        <main className="bg-white flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Area" element={<AreaList />} />
-            <Route path="/City" element={<CityList />} />
-            <Route path="/Country" element={<CountryList />} />
-            <Route path="/Customer" element={<CustomerList />} />
-            <Route path="/Menu" element={<MenuList />} />
-            <Route path="/OrderDetail" element={<OrderDetailList />} />
-            <Route path="/Order" element={<OrderList />} />
-            <Route path="/Pay" element={<PayList />} />
-            <Route path="/Reservation" element={<Reservation />} />
-            <Route path="/Restaurant" element={<RestaurantList />} />
-            <Route path="/Table" element={<RestaurantTableList />} />
-            <Route path="/State" element={<StateList />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <ToastProvider>
+        <div className="min-h-screen flex flex-col w-full">
+          <Header />
+          <main className="bg-white flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Area" element={<AreaList />} />
+              <Route path="/City" element={<CityList />} />
+              <Route path="/Country" element={<CountryList />} />
+              <Route path="/Customer" element={<CustomerList />} />
+              <Route path="/Menu" element={<MenuList />} />
+              <Route path="/OrderDetail" element={<OrderDetailList />} />
+              <Route path="/Order" element={<OrderList />} />
+              <Route path="/Pay" element={<PayList />} />
+              <Route path="/Reservation" element={<Reservation />} />
+              <Route path="/Restaurant" element={<RestaurantList />} />
+              <Route path="/Table" element={<RestaurantTableList />} />
+              <Route path="/State" element={<StateList />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </ToastProvider>
     </BrowserRouter>
   );
 }

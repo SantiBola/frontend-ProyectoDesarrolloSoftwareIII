@@ -1,8 +1,10 @@
 import { useState } from "react";
-
-const API_URL = "https://backend-proyectodesarrollosoftwareiii.onrender.com/Reservation";
+import { createReservation } from "../services/ReservationService";
+import { getReadableErrorMessage } from "../services/apiClient";
+import { useToast } from "../shared/ToastProvider";
 
 export function Reservation() {
+  const toast = useToast();
   const [form, setForm] = useState({
     idClient: "",
     idTable: "",
@@ -31,24 +33,20 @@ export function Reservation() {
     setErrorMsg("");
 
     try {
-      const res = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          idClient: Number(form.idClient),
-          idTable: Number(form.idTable),
-          dateReservation: form.dateReservation,
-          timeReservation: form.timeReservation ? `${form.timeReservation}:00` : "",
-        }),
+      await createReservation({
+        idClient: Number(form.idClient),
+        idTable: Number(form.idTable),
+        dateReservation: form.dateReservation,
+        timeReservation: form.timeReservation ? `${form.timeReservation}:00` : "",
       });
-
-      if (!res.ok) throw new Error(`Error ${res.status}`);
 
       setStatus("success");
       setForm({ idClient: "", idTable: "", dateReservation: "", timeReservation: "" });
+      toast.success("Reserva confirmada correctamente.");
     } catch (err) {
+      const message = getReadableErrorMessage(err);
       setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Error desconocido");
+      setErrorMsg(message);
     }
   };
 

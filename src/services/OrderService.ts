@@ -1,19 +1,10 @@
 import { config } from "../config";
 import type { Order } from "../Models/Responses/Order";
+import { handleJsonResponse } from "./apiClient";
 
 const API_URL = `${config.api.url}/Order`;
 
 export async function getOrders(): Promise<Order[]> {
-    try {
-        const response = await fetch(API_URL);
-
-        if (!response.ok) {
-            throw new Error("Error al obtener las órdenes");
-        }
-
-        return await response.json();
-    } catch (error) {
-        console.error("Error en orderService:", error);
-        throw error;
-    }
+  const response = await fetch(API_URL);
+  return handleJsonResponse<Order[]>(response, "Error al obtener las ordenes");
 }
