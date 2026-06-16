@@ -2,7 +2,7 @@ import { config } from "../config";
 import type { Customer } from "../Models/Responses/Customer";
 import { handleJsonResponse } from "./apiClient";
 
-const API_URL = `${config.api.url}/Customer`;
+const API_URL = `${config.api.url}/api/Customer`;
 export type CustomerPayload = Omit<Customer, "idClient">;
 
 export async function getCustomers(): Promise<Customer[]> {
