@@ -1,12 +1,15 @@
 'use client';
 
+
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
 
   const menuItems = [
     { label: "Home", href: "#home", type: "section" },
@@ -15,8 +18,10 @@ export default function Header() {
     { label: "Horarios", href: "#horarios", type: "section" },
   ];
 
+
   const handleSmoothScroll = (href: string) => {
     setIsMobileMenuOpen(false);
+
 
     if (href === "/Menu") {
       navigate("/Menu");
@@ -24,23 +29,27 @@ export default function Header() {
       return;
     }
 
+
     if (location.pathname !== "/") {
       navigate("/", { state: { scrollTo: href } });
       return;
     }
 
+
     if (href === "#home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
-      window.history.pushState(null, '', '/'); // Limpia el hash de la URL al volver arriba
+      window.history.pushState(null, '', '/');
       return;
     }
+
 
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.history.pushState(null, '', href); // Actualiza la barra de navegación para Cypress
+      window.history.pushState(null, '', href);
     }
   };
+
 
   const handleLogoClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -49,6 +58,7 @@ export default function Header() {
     window.scrollTo({ top: 0, behavior: "smooth" });
     window.history.pushState(null, '', '/');
   };
+
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full bg-[#FDF8F4] border-b border-[#EAE4DF] shadow-md">
@@ -67,6 +77,7 @@ export default function Header() {
             />
           </div>
 
+
           <div className="flex flex-col items-start text-left">
             <h3 className="text-[#542d1b] text-base md:text-lg font-bold tracking-wide leading-tight">
               Soda La Cabaña
@@ -76,6 +87,7 @@ export default function Header() {
             </p>
           </div>
         </div>
+
 
         {/* NAVEGACIÓN DESKTOP */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -91,34 +103,16 @@ export default function Header() {
           ))}
         </nav>
 
+
         {/* BOTONES ADICIONALES Y MENÚ MÓVIL */}
         <div className="flex items-center gap-3 md:gap-6">
-          <button
-            aria-label="Toggle theme"
-            className="w-7 h-7 rounded-full border border-[#e9ded6]/30 flex items-center justify-center text-[#542d1b]/60 hover:text-[#542d1b] hover:border-[#542d1b]/30 hover:bg-[#FDF8F4]/50 transition-all duration-200"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 3v2.25m0 13.5V21M4.22 4.22l1.58 1.58m12.42 12.42l1.58 1.58M3 12h2.25m13.5 0H21M5.8 18.2l1.58-1.58m12.42-12.42l1.58-1.58M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z"
-              />
-            </svg>
-          </button>
-
           <button
             onClick={() => handleSmoothScroll("#reservaciones")}
             className="hidden md:block px-6 py-2.5 bg-[#c05428] text-white font-bold rounded-full text-base tracking-wide shadow-lg hover:bg-[#a8441f] hover:shadow-xl transition-all duration-200 transform hover:scale-105"
           >
             Reservas
           </button>
+
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -143,6 +137,7 @@ export default function Header() {
         </div>
       </div>
 
+
       {/* MENÚ MÓVIL DESPLEGABLE */}
       {isMobileMenuOpen && (
         <div className="md:hidden border-t border-[#EAE4DF] bg-[#FDF8F4] animate-in slide-in-from-top-2 duration-300">
@@ -156,6 +151,7 @@ export default function Header() {
                 {item.label}
               </button>
             ))}
+
 
             <button
               onClick={() => handleSmoothScroll("#reservaciones")}
