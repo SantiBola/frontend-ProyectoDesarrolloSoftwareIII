@@ -3,7 +3,7 @@ import { useState } from 'react';
 // ── Credenciales hardcodeadas ──────────────────────────────────────────────
 const ADMIN_USER = 'admin';
 const ADMIN_PASS = 'cabana2025';
-// ──────────────────────────────────────────────────────────────────────────
+
 
 interface LoginModalProps {
   onSuccess: () => void;
@@ -27,17 +27,16 @@ export default function LoginModal({ onSuccess, onClose }: LoginModalProps) {
   };
 
   return (
-    // Overlay
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
       onClick={onClose}
     >
-      {/* Tarjeta del modal */}
+      {}
       <div
         className="relative w-full max-w-sm mx-4 bg-[#FDF8F4] rounded-2xl shadow-2xl border border-[#EAE4DF] p-8"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Botón cerrar */}
+        {}
         <button
           onClick={onClose}
           aria-label="Cerrar"
@@ -49,7 +48,7 @@ export default function LoginModal({ onSuccess, onClose }: LoginModalProps) {
           </svg>
         </button>
 
-        {/* Ícono candado */}
+        {}
         <div className="flex justify-center mb-4">
           <div className="w-14 h-14 rounded-full bg-[#c05428]/10 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -68,7 +67,7 @@ export default function LoginModal({ onSuccess, onClose }: LoginModalProps) {
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          {/* Usuario */}
+          {}
           <div>
             <label className="block text-sm font-semibold text-[#542d1b] mb-1">
               Usuario
@@ -85,7 +84,7 @@ export default function LoginModal({ onSuccess, onClose }: LoginModalProps) {
             />
           </div>
 
-          {/* Contraseña */}
+          {}
           <div>
             <label className="block text-sm font-semibold text-[#542d1b] mb-1">
               Contraseña
@@ -125,14 +124,14 @@ export default function LoginModal({ onSuccess, onClose }: LoginModalProps) {
             </div>
           </div>
 
-          {/* Error */}
+          {}
           {error && (
             <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2 text-center">
               {error}
             </p>
           )}
 
-          {/* Botón ingresar */}
+          {}
           <button
             type="submit"
             className="w-full mt-1 px-6 py-3 bg-[#c05428] text-white font-bold rounded-full text-base

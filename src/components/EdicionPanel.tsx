@@ -22,7 +22,7 @@ export default function EdicionPanel({ onClose }: EdicionPanelProps) {
         className="relative w-full max-w-sm mx-4 bg-[#FDF8F4] rounded-2xl shadow-2xl border border-[#EAE4DF] p-8"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Botón cerrar */}
+        {}
         <button
           onClick={onClose}
           aria-label="Cerrar"
@@ -34,7 +34,7 @@ export default function EdicionPanel({ onClose }: EdicionPanelProps) {
           </svg>
         </button>
 
-        {/* Ícono */}
+        {}
         <div className="flex justify-center mb-4">
           <div className="w-14 h-14 rounded-full bg-[#c05428]/10 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -98,7 +98,7 @@ export default function EdicionPanel({ onClose }: EdicionPanelProps) {
           </button>
         </div>
 
-        {/* Cerrar sesión */}
+        {}
         <button
           onClick={onClose}
           className="w-full mt-4 text-sm text-[#542d1b]/50 hover:text-[#542d1b] transition-colors text-center"
